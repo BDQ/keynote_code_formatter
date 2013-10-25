@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/solarized_dark.min.css">
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <style>
+      code {
+        font-size: 24pt;
+      }
+    </style>
+    <script type="text/javascript">
+      $(function() {
+
+        $('#doit').click(function(){
+          var source = $('#source').val();
+          hl = hljs.highlightAuto(source);
+
+          $('#lang').html(hl.language);
+          $('code').html(hl.value);
+        });
+      });
+    </script>
+  </head>
+  <body>
+  <textarea id="source" rows="20" cols="150"></textarea><br><button id="doit">Highlight</button>
+  <h4 id="lang">Unknown</h4>
+  <pre><code></code></pre>
+  </body>
+</html>
